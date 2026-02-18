@@ -136,7 +136,7 @@ export default function HeroSection() {
             <ambientLight intensity={0.5} />
             <directionalLight position={[5, 5, 5]} />
             <Model url="/model/cube_cascade.glb" />
-            <OrbitControls />
+            <OrbitControls enableZoom={false} />
           </Canvas>
         </motion.div>
       </div>

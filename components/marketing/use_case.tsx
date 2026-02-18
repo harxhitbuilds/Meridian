@@ -17,9 +17,9 @@ export default function UseCaseSection() {
         <FirstCard />
         <SecondCard />
         <ThirdCard />
-        {/* <FourthCard />
+        <FourthCard />
         <FifthCard />
-        <SixthCard /> */}
+        <SixthCard />
       </div>
     </Container>
   );

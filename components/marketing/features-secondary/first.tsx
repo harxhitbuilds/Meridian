@@ -16,7 +16,7 @@ export default function FirstCard() {
             whileHover={{ rotate: 12, scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300, damping: 24 }}
             style={{ transformOrigin: "50% 50%" }}
-            className="flex h-24 w-24 items-center justify-center rounded-xl border border-accent bg-black/60 will-change-transform"
+            className="border-accent bg-muted flex h-24 w-24 items-center justify-center rounded-xl border will-change-transform"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white p-2 text-black">
               <IconSearch size={20} />
@@ -28,7 +28,7 @@ export default function FirstCard() {
             whileHover={{ rotate: -12, scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300, damping: 24 }}
             style={{ transformOrigin: "50% 50%" }}
-            className="flex h-24 w-24 items-center justify-center rounded-xl border border-accent bg-black/60 will-change-transform"
+            className="border-accent bg-muted flex h-24 w-24 items-center justify-center rounded-xl border will-change-transform"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white p-2 text-black">
               <IconBrain size={20} />
