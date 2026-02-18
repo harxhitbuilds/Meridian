@@ -1,7 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, useScroll, useSpring } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,8 +16,11 @@ import Container from "../global/container";
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 20 });
+
   return (
-    <Container>
+    <Container className="sticky top-0 z-40 backdrop-blur-2xl">
       <nav className="relative flex h-20 items-center justify-between px-6">
         <motion.div
           initial={{
@@ -57,7 +60,7 @@ export default function Navbar() {
           <Link
             href={navGithub.href}
             target="_blank"
-            className="flex items-center gap-1 text-xs text-zinc-400"
+            className="text-accent flex items-center gap-1 text-xs"
           >
             <navGithub.icon className="size-4" />
             {navGithub.starred}
@@ -67,9 +70,9 @@ export default function Navbar() {
               <Button
                 key={index}
                 variant="outline"
-                className="cursor-pointer rounded-xs"
+                className="group cursor-pointer rounded-xs"
               >
-                <button.icon className="size-4" />
+                <button.icon className="group-hover:text-accent size-4" />
                 {button.label}
               </Button>
             ))}
@@ -82,7 +85,7 @@ export default function Navbar() {
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
         {mobileMenuOpen && (
-          <div className="bg-background border-border absolute top-full left-0 z-50 h-screen w-full border-t md:hidden">
+          <div className="border-border absolute top-full left-0 z-50 h-screen w-full border-t bg-black md:hidden">
             <ul className="flex flex-col gap-4 p-6 text-base text-zinc-400">
               {navLinks.map((link, index) => (
                 <Link
@@ -111,6 +114,14 @@ export default function Navbar() {
             </div>
           </div>
         )}
+
+        <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-[1px] overflow-hidden">
+          <motion.div
+            className="from-accent to-accent-foreground h-full bg-gradient-to-r"
+            style={{ transformOrigin: "left", scaleX }}
+            aria-hidden
+          />
+        </div>
       </nav>
     </Container>
   );

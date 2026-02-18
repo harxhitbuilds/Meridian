@@ -8,7 +8,7 @@ import { GLTF } from "three-stdlib";
 import { useRef } from "react";
 
 import { Badge } from "@/components/ui/badge";
-import { heroConfig } from "@/config/hero";
+import { heroConfig } from "@/config/marketing";
 
 import Container from "../global/container";
 import { Button } from "../ui/button";
@@ -58,7 +58,7 @@ export default function HeroSection() {
               duration: 1,
               ease: "easeInOut",
             }}
-            className="bg-linear-to-t from-yellow-900 via-zinc-400 to-zinc-200 bg-clip-text pb-1 text-4xl text-transparent md:text-6xl"
+            className="bg-linear-to-t from-orange-400 via-zinc-400 to-zinc-200 bg-clip-text pb-1 text-4xl text-transparent md:text-6xl"
           >
             {heroConfig.heroHeading}
           </motion.h1>

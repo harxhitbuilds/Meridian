@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { useEffect, useState } from "react";
 
-import { companiesConfig } from "@/config/hero";
+import { companiesConfig } from "@/config/marketing";
 
 import Container from "../global/container";
 
