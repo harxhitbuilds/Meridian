@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Iceland, Inter, Red_Hat_Text } from "next/font/google";
 
 import "./globals.css";
+import ScrollToTop from "@/components/global/scroll-to-top";
 
 const redHatText = Red_Hat_Text({
   variable: "--font-red-hat-text",
@@ -35,6 +36,7 @@ export default function RootLayout({
         className={`${redHatText.variable} ${inter.variable} ${iceland.variable} bg-background text-foreground dark antialiased`}
       >
         {children}
+        <ScrollToTop/>
       </body>
     </html>
   );
